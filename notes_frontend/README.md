@@ -1,18 +1,13 @@
-# vue-kavia
+# Personal Notes - Frontend (Vue 3 + Vite)
 
-This template should help get you started developing with Vue 3 in Vite.
+A modern, responsive web UI for a personal notes app featuring:
+- User authentication (login/register)
+- Create, edit, delete notes
+- List and search notes
+- Sidebar navigation with main content panel
+- Light theme using primary (#42b983), secondary (#35495e), and accent (#ffcc00)
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
+This UI uses Pinia for state, Vue Router for navigation, and is ready to connect to a backend API by replacing the mock implementations in `src/stores/auth.ts` and `src/stores/notes.ts`.
 
 ## Project Setup
 
@@ -20,26 +15,26 @@ See [Vite Configuration Reference](https://vite.dev/config/).
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Development
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### Build for Production
 
 ```sh
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
+### Lint
 
 ```sh
 npm run lint
 ```
+
+## Backend integration
+
+- Replace auth methods in `src/stores/auth.ts` (login, register, logout) with real HTTP requests and store tokens securely.
+- Replace CRUD methods in `src/stores/notes.ts` (create, update, remove, and initial fetch) to call your API.
+- Consider using an .env variable for the API base URL, e.g. `VITE_API_BASE_URL`, and access it via `import.meta.env.VITE_API_BASE_URL`.
